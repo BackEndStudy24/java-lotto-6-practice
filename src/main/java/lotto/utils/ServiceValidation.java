@@ -41,24 +41,36 @@ public class ServiceValidation {
     public static void validateDuplicateLottoNumbers(List<Integer> lottoNumbers) {
         Set<Integer> integerSet = new HashSet<>(lottoNumbers);
 
-        if(integerSet.size() != lottoNumbers.size()) {
+        if (integerSet.size() != lottoNumbers.size()) {
             throw new IllegalArgumentException(ErrorMessageType.ERROR_DUPLICATE_LOTTO_NUMBER.getMessage());
         }
     }
 
     public static void validateLottoNumberCount(List<Integer> lottoNumbers) {
-        if(lottoNumbers.size() != 6) {
+        if (lottoNumbers.size() != 6) {
             throw new IllegalArgumentException(ErrorMessageType.ERROR_LOTTO_NUMBER_COUNT.getMessage());
         }
     }
 
     public static void validateDuplicateBonusNumber(List<Integer> lottoNumbers, int bonusNumber) {
-        if(lottoNumbers.contains(bonusNumber)) {
+        if (lottoNumbers.contains(bonusNumber)) {
             throw new IllegalArgumentException(ErrorMessageType.ERROR_DUPLICATE_BONUS_NUMBER.getMessage());
         }
     }
 
+    public static void validateLottoNumberRange(List<Integer> lottoNumbers) {
+        for (int num : lottoNumbers) {
+            if (num < 1 || num > 45) {
+                throw new IllegalArgumentException(ErrorMessageType.ERROR_LOTTO_NUMBER_RANGE.getMessage());
+            }
+        }
+    }
 
+    public static void validateBonusNumberRange(int bonusNumber) {
+        if (bonusNumber < 1 || bonusNumber > 45) {
+            throw new IllegalArgumentException(ErrorMessageType.ERROR_LOTTO_NUMBER_RANGE.getMessage());
+        }
+    }
 
 
 }
