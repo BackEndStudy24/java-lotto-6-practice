@@ -9,7 +9,8 @@ public enum ErrorMessageType {
     ERROR_LOTTO_NUMBER_COUNT("[ERROR] 로또번호는 6개를 입력해야합니다. 다시 입력 해주세요."),
     ERROR_DUPLICATE_BONUS_NUMBER("[ERROR] 로또번호와 보너스 번호는 중복될 수 없습니다. 다시 입력 해주세요."),
     ERROR_LOTTO_NUMBER_RANGE("[ERROR] 로또 번호는 1~45만 입력 가능합니다. 다시 입력 해주세요."),
-    ERROR_BONUS_NUMBER_RANGE("[ERROR] 보너스 번호는 1~45만 입력 가능합니다. 다시 입력 해주세요.");
+    ERROR_BONUS_NUMBER_RANGE("[ERROR] 보너스 번호는 1~45만 입력 가능합니다. 다시 입력 해주세요."),
+    ERROR_END_COMMA("[ERROR] 잘못된 입력입니다. 다시 입력 해주세요.");
 
     private final String message;
 
