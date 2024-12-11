@@ -3,7 +3,9 @@ package lotto.utils;
 import lotto.constants.ErrorMessageType;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
@@ -33,6 +35,14 @@ public class ServiceValidation {
             return lottoNumbers;
         } catch (NumberFormatException e) {
             throw new IllegalArgumentException(ErrorMessageType.ERROR_LOTTO_NUMBER_FORMAT.getMessage());
+        }
+    }
+
+    public static void validateDuplicateLottoNumbers(List<Integer> lottoNumbers) {
+        Set<Integer> integerSet = new HashSet<>(lottoNumbers);
+
+        if(integerSet.size() != lottoNumbers.size()) {
+            throw new IllegalArgumentException(ErrorMessageType.ERROR_DUPLICATE_LOTTO_NUMBER.getMessage());
         }
     }
 
