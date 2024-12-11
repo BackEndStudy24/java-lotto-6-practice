@@ -46,6 +46,12 @@ public class ServiceValidation {
         }
     }
 
+    public static void validateLottoNumberCount(List<Integer> lottoNumbers) {
+        if(lottoNumbers.size() != 6) {
+            throw new IllegalArgumentException(ErrorMessageType.ERROR_LOTTO_NUMBER_COUNT.getMessage());
+        }
+    }
+
 
 
 }
