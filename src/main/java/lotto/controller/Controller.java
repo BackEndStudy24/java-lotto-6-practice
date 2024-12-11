@@ -1,5 +1,7 @@
 package lotto.controller;
 
+import lotto.view.InputView;
+
 public class Controller {
 
     public void start(){
@@ -8,6 +10,6 @@ public class Controller {
 
 
     private void clientInput_LottoNumber() {
-
+        String rawMoney = InputView.inputBuyMoneyMessage();
     }
 }
