@@ -19,9 +19,9 @@ public class ServiceValidation {
         }
     }
 
-    public static void validateIsNumericBonusNumber(String input) {
+    public static void validateIsNumeric(String input) {
         if (!NUMBER_PATTERN.matcher(input).matches()) {
-            throw new IllegalArgumentException(ErrorMessageType.ERROR_BONUS_NUMBER_FORMAT.getMessage());
+            throw new IllegalArgumentException(ErrorMessageType.ERROR_NUMBER_FORMAT.getMessage());
         }
     }
 
@@ -51,6 +51,7 @@ public class ServiceValidation {
             throw new IllegalArgumentException(ErrorMessageType.ERROR_LOTTO_NUMBER_COUNT.getMessage());
         }
     }
+
 
 
 

@@ -3,7 +3,7 @@ package lotto.constants;
 public enum ErrorMessageType {
 
     ERROR_NULL("[ERROR] 빈값은 입력할 수 없습니다. 다시 입력 해주세요."),
-    ERROR_BONUS_NUMBER_FORMAT("[ERROR] 올바르지 않은 보너스번호 형식입니다. 다시 입력 해주세요."),
+    ERROR_NUMBER_FORMAT("[ERROR] 올바르지 않은 숫자 형식입니다. 다시 입력 해주세요."),
     ERROR_LOTTO_NUMBER_FORMAT("[ERROR] 올바르지 않은 로또번호 형식입니다. 다시 입력 해주세요."),
     ERROR_DUPLICATE_LOTTO_NUMBER("[ERROR] 로또번호는 중복될 수 없습니다. 다시 입력 해주세요."),
     ERROR_LOTTO_NUMBER_COUNT("[ERROR] 로또번호는 6개를 입력해야합니다. 다시 입력 해주세요.");
