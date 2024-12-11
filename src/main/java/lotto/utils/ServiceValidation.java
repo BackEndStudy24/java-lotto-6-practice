@@ -52,6 +52,12 @@ public class ServiceValidation {
         }
     }
 
+    public static void validateDuplicateBonusNumber(List<Integer> lottoNumbers, int bonusNumber) {
+        if(lottoNumbers.contains(bonusNumber)) {
+            throw new IllegalArgumentException(ErrorMessageType.ERROR_DUPLICATE_BONUS_NUMBER.getMessage());
+        }
+    }
+
 
 
 
