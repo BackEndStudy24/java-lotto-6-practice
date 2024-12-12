@@ -12,7 +12,7 @@ public class InputView {
 
     private static final String COMMA = ",";
 
-    public static String inputBuyMoneyMessage() {
+    public static String getBuyMoneyMessage() {
         System.out.println("구입금액을 입력해 주세요.");
         return Console.readLine().trim();
     }
@@ -33,6 +33,11 @@ public class InputView {
         if (input.endsWith(COMMA)) {
             throw new IllegalArgumentException(ErrorMessageType.ERROR_END_COMMA.getMessage());
         }
+    }
+
+    public static String getBonusNumber() {
+        System.out.println("보너스 번호를 입력해 주세요.");
+        return Console.readLine().trim();
     }
 
 }
