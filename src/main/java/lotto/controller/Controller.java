@@ -13,9 +13,13 @@ public class Controller {
     final WinnerNumber winnerNumber = new WinnerNumber();
 
     public void start(){
-        clientInput_Money();
-        clientInput_LottoNumbers();
-        clientInput_BonusNumber();
+//        clientInput_Money();
+//        clientInput_LottoNumbers();
+//        clientInput_BonusNumber();
+//
+//        lottoNumber();
+
+        System.out.printf("수익률 : %,.2f", lottos.yieldCal());
 
 
     }
@@ -26,6 +30,7 @@ public class Controller {
         ServiceValidation.validateIsNumeric(rawMoney);
         int money = Integer.parseInt(rawMoney);
         lottos.buyLotto(money);
+        lottos.getLottoList();
     }
 
     private void clientInput_LottoNumbers() {
@@ -39,8 +44,8 @@ public class Controller {
         winnerNumber.inputWinnerBonusNumber(bonusNumber);
     }
 
-    private void checkedLottoNumber() {
-
+    private void lottoNumber() {
+        lottos.checkedLottoNumbers(winnerNumber.getLottoNumbers());
     }
 
 

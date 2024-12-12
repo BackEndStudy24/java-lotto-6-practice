@@ -19,6 +19,16 @@ public enum WinnerType {
         this.winnings = winnings;
     }
 
+    public static WinnerType checkedWinnerType(int correct) {
+        WinnerType[] winnerTypes = WinnerType.values();
+        for(int i = 0; i< winnerTypes.length; i++) {
+            if(winnerTypes[i].correct == correct) {
+                return winnerTypes[i];
+            }
+        }
+        return null;
+    }
+
     public int getCorrect() {
         return correct;
     }
