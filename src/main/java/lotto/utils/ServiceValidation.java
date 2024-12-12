@@ -71,5 +71,11 @@ public class ServiceValidation {
         }
     }
 
+    public static void validateDivided1000(int money) {
+        if(money % 1000 != 0) {
+            throw new IllegalArgumentException(ErrorMessageType.ERROR_MONEY_DIVIDED.getMessage());
+        }
+    }
+
 
 }
