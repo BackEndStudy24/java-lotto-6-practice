@@ -17,14 +17,14 @@ public class InputView {
         return Console.readLine().trim();
     }
 
-    public static List<String> getStringsUsingDelimiter() {
+    public static List<Integer> getStringsUsingDelimiter() {
         System.out.println("당첨 번호를 입력해 주세요.");
         String input = Console.readLine();
         validateNotEndDelimiter(input);
-        List<String> inputs = Arrays.stream(input.split(COMMA))
+        List<Integer> inputs = Arrays.stream(input.split(COMMA))
                 .map(String::trim)
-                .collect(Collectors.toList());
-        inputs.forEach(ServiceValidation::validateNull);
+                .map(Integer::parseInt)
+                .toList();
         return inputs;
     }
 

@@ -1,6 +1,7 @@
 package lotto.controller;
 
 import lotto.model.Lottos;
+import lotto.model.WinnerNumber;
 import lotto.utils.ServiceValidation;
 import lotto.view.InputView;
 
@@ -9,6 +10,7 @@ import java.util.List;
 public class Controller {
 
     final Lottos lottos = new Lottos();
+    final WinnerNumber winnerNumber = new WinnerNumber();
 
     public void start(){
         clientInput_Money();
@@ -25,12 +27,14 @@ public class Controller {
     }
 
     private void clientInput_LottoNumbers() {
-        List<String> rawLottoNumbers = InputView.getStringsUsingDelimiter();
-        System.out.println(rawLottoNumbers);
+        List<Integer> rawLottoNumbers = InputView.getStringsUsingDelimiter();
+        winnerNumber.inputWinnerLottoNumbers(rawLottoNumbers);
     }
 
     private void clientInput_BonusNumber() {
         String rawBonusNumber = InputView.getBonusNumber();
+        int bonusNumber = Integer.parseInt(rawBonusNumber);
+        winnerNumber.inputWinnerBonusNumber(bonusNumber);
     }
 
 

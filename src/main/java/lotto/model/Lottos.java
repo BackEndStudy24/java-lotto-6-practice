@@ -12,6 +12,7 @@ public class Lottos {
 
     private List<Integer> lottos = new ArrayList<>();
 
+
     public void buyLotto(int money) {
         ServiceValidation.validateDivided1000(money);
         int tickets = money / THOUSAND;
