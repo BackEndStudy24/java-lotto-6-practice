@@ -16,6 +16,8 @@ public class Controller {
         clientInput_Money();
         clientInput_LottoNumbers();
         clientInput_BonusNumber();
+
+
     }
 
     private void clientInput_Money() {
@@ -35,6 +37,10 @@ public class Controller {
         String rawBonusNumber = InputView.getBonusNumber();
         int bonusNumber = Integer.parseInt(rawBonusNumber);
         winnerNumber.inputWinnerBonusNumber(bonusNumber);
+    }
+
+    private void checkedLottoNumber() {
+
     }
 
 
