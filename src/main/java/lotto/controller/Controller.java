@@ -1,10 +1,14 @@
 package lotto.controller;
 
+import lotto.model.Lottos;
+import lotto.utils.ServiceValidation;
 import lotto.view.InputView;
 
 import java.util.List;
 
 public class Controller {
+
+    final Lottos lottos = new Lottos();
 
     public void start(){
         clientInput_Money();
@@ -14,6 +18,10 @@ public class Controller {
 
     private void clientInput_Money() {
         String rawMoney = InputView.getBuyMoneyMessage();
+        ServiceValidation.validateNull(rawMoney);
+        ServiceValidation.validateIsNumeric(rawMoney);
+        int money = Integer.parseInt(rawMoney);
+        lottos.buyLotto(money);
     }
 
     private void clientInput_LottoNumbers() {

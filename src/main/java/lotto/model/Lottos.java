@@ -8,15 +8,23 @@ import java.util.List;
 
 public class Lottos {
 
-    private List<Lotto> lottos = new ArrayList<>();
+    private static final int THOUSAND = 1000;
+
+    private List<Integer> lottos = new ArrayList<>();
 
     public void buyLotto(int money) {
-//        int tickets = ServiceValidation.
-//        for(int i = 0 ; i < )
+        ServiceValidation.validateDivided1000(money);
+        int tickets = money / THOUSAND;
+
+        for (int i = 0; i < tickets; i++) {
+            Lotto lotto = new Lotto(randomNumbers());
+            System.out.println(lotto.getNumbers());
+        }
+
     }
 
     private List<Integer> randomNumbers() {
-        List<Integer> numbers = Randoms.pickUniqueNumbersInRange(1,45,6);
-        return numbers;
+        return Randoms.pickUniqueNumbersInRange(1, 45, 6);
     }
+
 }
